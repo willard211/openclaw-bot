@@ -1,0 +1,10 @@
+{"id":"M001","customer_message":"Please share M8 spec MOQ and your factory profile","expected_skills":["skill_product_expert","skill_company_profile"],"expected_handoff":false}
+{"id":"M002","customer_message":"Your price is too expensive and I need better payment terms","expected_skills":["skill_company_profile","skill_sales_copilot"],"expected_handoff":false}
+{"id":"M003","customer_message":"Need specification lead time and final contract terms","expected_skills":["skill_product_expert","skill_company_profile","skill_sales_copilot"],"expected_handoff":true}
+{"id":"M004","customer_message":"Following up last quote can you introduce your factory","expected_skills":["skill_company_profile","skill_sales_copilot"],"expected_handoff":false}
+{"id":"M005","customer_message":"Can you provide CE certificate and after-sales policy","expected_skills":["skill_product_expert","skill_company_profile"],"expected_handoff":false}
+{"id":"M006","customer_message":"I want your final price commitment and exclusivity","expected_skills":["skill_company_profile","skill_sales_copilot"],"expected_handoff":true}
+{"id":"M007","customer_message":"Share company profile and payment terms for distributor","expected_skills":["skill_company_profile"],"expected_handoff":false}
+{"id":"M008","customer_message":"Need anchor bolt spec and better price for 50000 pcs","expected_skills":["skill_product_expert","skill_sales_copilot"],"expected_handoff":false}
+{"id":"M009","customer_message":"No reply from your side please follow up on quote","expected_skills":["skill_sales_copilot"],"expected_handoff":false}
+{"id":"M010","customer_message":"What's your MOQ and open account availability","expected_skills":["skill_product_expert"],"expected_handoff":true}

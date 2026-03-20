@@ -1,0 +1,73 @@
+version: 1
+fallback_language: en
+
+routing:
+  - name: product_expert
+    when_any_keyword:
+      - 规格
+      - 参数
+      - MOQ
+      - 认证
+      - 交期
+      - 型号
+      - specification
+      - spec
+      - lead time
+      - certification
+      - certificate
+      - anchor bolt
+    use_skill: skill_product_expert
+
+  - name: company_profile
+    when_any_keyword:
+      - 公司介绍
+      - 工厂
+      - 资质
+      - 付款
+      - 售后
+      - 贸易条款
+      - factory
+      - payment terms
+      - after-sales
+      - company profile
+      - introduce
+      - contract
+      - credit terms
+      - exclusivity
+    use_skill: skill_company_profile
+
+  - name: sales_copilot
+    when_any_keyword:
+      - 太贵
+      - 便宜点
+      - 考虑下
+      - 已读不回
+      - 何时下单
+      - too expensive
+      - better price
+      - follow up
+      - following up
+      - last quote
+      - order time
+      - final price
+      - final lead time
+      - final contract
+      - commitment
+    use_skill: skill_sales_copilot
+
+conflict_resolution:
+  strategy: sequential_merge
+  order:
+    - skill_product_expert
+    - skill_company_profile
+    - skill_sales_copilot
+
+risk_control:
+  require_human_approval:
+    - final_price
+    - final_lead_time_commitment
+    - contract_terms
+    - credit_terms
+    - exclusivity
+  low_confidence_threshold: 0.65
+  on_low_confidence: handoff_to_human

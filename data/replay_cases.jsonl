@@ -1,0 +1,10 @@
+{"id":"T001","customer_message":"Can you share specification for M8 stainless bolt and MOQ?","expected_skill":"skill_product_expert","expected_handoff":false}
+{"id":"T002","customer_message":"Please introduce your factory and certifications","expected_skill":"skill_company_profile","expected_handoff":false}
+{"id":"T003","customer_message":"Your price is too expensive can you offer better price?","expected_skill":"skill_sales_copilot","expected_handoff":false}
+{"id":"T004","customer_message":"Need final contract terms and exclusivity for Brazil","expected_skill":"skill_company_profile","expected_handoff":true}
+{"id":"T005","customer_message":"What is your lead time for 20000 pcs?","expected_skill":"skill_product_expert","expected_handoff":false}
+{"id":"T006","customer_message":"Payment terms please can you do open account?","expected_skill":"skill_company_profile","expected_handoff":true}
+{"id":"T007","customer_message":"Following up on my last quote","expected_skill":"skill_sales_copilot","expected_handoff":false}
+{"id":"T008","customer_message":"Do you have CE certificate for anchor bolts?","expected_skill":"skill_product_expert","expected_handoff":false}
+{"id":"T009","customer_message":"Company profile and after-sales policy please","expected_skill":"skill_company_profile","expected_handoff":false}
+{"id":"T010","customer_message":"We need your final price and final lead time commitment today","expected_skill":"skill_sales_copilot","expected_handoff":true}

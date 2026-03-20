@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenClaw Trade Employee Demo</title>
+  <style>
+    :root {
+      --bg: #eef3f8;
+      --panel: #ffffff;
+      --text: #132238;
+      --sub: #5b6b80;
+      --brand: #0066d6;
+      --border: #d4deea;
+      --user: #e7f1ff;
+      --bot: #f7fbff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Segoe UI, PingFang SC, Microsoft YaHei, sans-serif;
+      background: radial-gradient(circle at top right, #dde9f9, var(--bg) 45%);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 24px auto;
+      padding: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(13, 40, 82, 0.08);
+      overflow: hidden;
+    }
+    .head {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title { font-weight: 700; }
+    .state { color: var(--sub); font-size: 13px; }
+    .chat {
+      height: 62vh;
+      overflow: auto;
+      padding: 14px;
+      background: linear-gradient(180deg, #fbfdff, #f3f8fe);
+    }
+    .msg {
+      margin: 10px 0;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      white-space: pre-wrap;
+      line-height: 1.45;
+    }
+    .user { background: var(--user); }
+    .bot { background: var(--bot); }
+    .meta { color: var(--sub); font-size: 12px; margin-top: 6px; }
+    .bar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      padding: 12px;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+    input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 14px;
+    }
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-weight: 600;
+      background: var(--brand);
+      color: #fff;
+      cursor: pointer;
+    }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="head">
+        <div class="title">OpenClaw 外贸数字员工 Demo</div>
+        <div class="state" id="state">Checking server...</div>
+      </div>
+      <div class="chat" id="chat"></div>
+      <div class="bar">
+        <input id="input" placeholder="Type your message / 输入客户问题" />
+        <button id="send">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chat = document.getElementById('chat');
+    const input = document.getElementById('input');
+    const send = document.getElementById('send');
+    const state = document.getElementById('state');
+
+    function addMsg(text, cls, meta='') {
+      const d = document.createElement('div');
+      d.className = `msg ${cls}`;
+      d.textContent = text;
+      if (meta) {
+        const m = document.createElement('div');
+        m.className = 'meta';
+        m.textContent = meta;
+        d.appendChild(m);
+      }
+      chat.appendChild(d);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function checkHealth() {
+      try {
+        const r = await fetch('/health');
+        if (!r.ok) throw new Error('bad status');
+        state.textContent = 'Online';
+      } catch (e) {
+        state.textContent = 'Offline';
+      }
+    }
+
+    async function sendMsg() {
+      const message = input.value.trim();
+      if (!message) return;
+      input.value = '';
+      send.disabled = true;
+      addMsg(message, 'user');
+      try {
+        const r = await fetch('/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        });
+        const data = await r.json();
+        if (!r.ok) throw new Error(data.error || 'request failed');
+        const meta = `skills=${data.skills.join(', ')} | handoff=${data.handoff} | lang=${data.language}`;
+        addMsg(data.reply, 'bot', meta);
+      } catch (e) {
+        addMsg(`Error: ${e.message}`, 'bot');
+      } finally {
+        send.disabled = false;
+        input.focus();
+      }
+    }
+
+    send.addEventListener('click', sendMsg);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendMsg();
+    });
+
+    checkHealth();
+    addMsg('Demo ready. Ask product/company/sales questions in English or Chinese.', 'bot');
+  </script>
+</body>
+</html>
