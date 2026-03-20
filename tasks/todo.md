@@ -27,7 +27,7 @@ I am self-confirming this plan because the task is documentation-only, low-risk,
 - [x] Security docs added.
 - [x] Verification completed.
 - [x] Review completed.
-- [ ] Commit pushed.
+- [x] Commit pushed.
 
 ## Review
 
