@@ -18,6 +18,7 @@ An MVP skeleton for a foreign-trade AI assistant that combines product facts, co
 - [ROADMAP.md](C:\Users\31072\openclaw-trade-employee\ROADMAP.md): near-term milestones from MVP to production readiness
 - [docs/implementation-checklist.md](C:\Users\31072\openclaw-trade-employee\docs\implementation-checklist.md): short rollout checklist and validation targets
 - [LICENSE](C:\Users\31072\openclaw-trade-employee\LICENSE): MIT license for repository use and distribution
+- [SECURITY.md](C:\Users\31072\openclaw-trade-employee\SECURITY.md): vulnerability disclosure guidance and current security boundaries
 
 ## Current MVP Scope
 

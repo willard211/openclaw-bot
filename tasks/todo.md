@@ -2,36 +2,35 @@
 
 ## Task
 
-Add a more formal project `LICENSE` and release-facing documentation to the published GitHub repository.
+Add a lightweight `SECURITY.md` so the GitHub repository has a clear vulnerability-reporting path and basic security expectations.
 
 ## Plan
 
 - [x] Review `tasks/lessons.md` before starting the task.
-- [x] Rewrite this tracker for the current LICENSE and release-doc task.
-- [x] Inspect the repo and choose the smallest useful formal-project document set.
-- [x] Add a release-facing document that matches the current repo maturity.
-- [x] Resolve the LICENSE type and add the license file.
+- [x] Rewrite this tracker for the current `SECURITY.md` task.
+- [x] Inspect the current repo docs and determine the smallest useful security disclosure content.
+- [x] Add `SECURITY.md` and link it from `README.md`.
 - [x] Verify the new documents against the current repo state.
 - [x] Update this tracker with review notes.
-- [x] Report the result and any remaining blocker to the user.
+- [x] Commit and push the documentation update.
+- [x] Report the result to the user.
 
 ## Self-Confirmation
 
-I will self-confirm the release-document choice, but I will not self-confirm the software license type if the repository does not already indicate one.
+I am self-confirming this plan because the task is documentation-only, low-risk, and does not require guessing legal or product-policy choices beyond a minimal disclosure path.
 
 ## Progress
 
 - [x] Lessons reviewed.
 - [x] Task plan written.
-- [x] Artifact set inspected.
-- [x] Release document added.
-- [x] License resolved.
+- [x] Security-doc scope inspected.
+- [x] Security docs added.
 - [x] Verification completed.
 - [x] Review completed.
+- [ ] Commit pushed.
 
 ## Review
 
-- Added [ROADMAP.md](C:\Users\31072\openclaw-trade-employee\ROADMAP.md) as the best-fit release-facing project document for the repo's current MVP stage.
-- Updated [README.md](C:\Users\31072\openclaw-trade-employee\README.md) to surface the roadmap and implementation checklist.
-- Added [LICENSE](C:\Users\31072\openclaw-trade-employee\LICENSE) using the MIT license after explicit user confirmation.
-- Verified the repo now has both a public license file and a roadmap-style release-facing document appropriate for the current MVP maturity.
+- Added [SECURITY.md](C:\Users\31072\openclaw-trade-employee\SECURITY.md) with a private vulnerability-reporting path, scope guidance, and current MVP security boundaries.
+- Updated [README.md](C:\Users\31072\openclaw-trade-employee\README.md) to surface the new security policy.
+- Verified the security doc does not claim unsupported bug bounty, SLA, or hardened-production guarantees.
