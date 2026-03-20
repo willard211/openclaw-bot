@@ -2,35 +2,36 @@
 
 ## Task
 
-Improve the repository README so the GitHub project is easier to understand, run, and evaluate.
+Add a more formal project `LICENSE` and release-facing documentation to the published GitHub repository.
 
 ## Plan
 
-- [x] Review `tasks/lessons.md` before starting the README task.
-- [x] Rewrite this tracker for the current README improvement task.
-- [x] Inspect the current README, repo structure, and verified runtime behavior.
-- [x] Identify the smallest set of documentation changes that materially improve onboarding.
-- [x] Update `README.md` with clearer setup, run, and test guidance.
-- [x] Verify the updated README against the actual repo structure and previously tested commands.
+- [x] Review `tasks/lessons.md` before starting the task.
+- [x] Rewrite this tracker for the current LICENSE and release-doc task.
+- [x] Inspect the repo and choose the smallest useful formal-project document set.
+- [x] Add a release-facing document that matches the current repo maturity.
+- [x] Resolve the LICENSE type and add the license file.
+- [x] Verify the new documents against the current repo state.
 - [x] Update this tracker with review notes.
-- [x] Report the documentation improvement result to the user.
+- [x] Report the result and any remaining blocker to the user.
 
 ## Self-Confirmation
 
-I am self-confirming this plan because the task is low-risk, documentation-only, and grounded in behavior that has already been verified locally.
+I will self-confirm the release-document choice, but I will not self-confirm the software license type if the repository does not already indicate one.
 
 ## Progress
 
 - [x] Lessons reviewed.
-- [x] README task plan written.
-- [x] Current docs inspected.
-- [x] Documentation gaps identified.
-- [x] README updated.
+- [x] Task plan written.
+- [x] Artifact set inspected.
+- [x] Release document added.
+- [x] License resolved.
 - [x] Verification completed.
 - [x] Review completed.
 
 ## Review
 
-- Rewrote the README around GitHub-friendly onboarding rather than internal notes only.
-- Added explicit MVP scope, repository structure, verified local commands, verified observed results, API examples, env-var notes, and current limitations.
-- Kept the update grounded in commands and behavior already verified locally instead of adding speculative setup steps.
+- Added [ROADMAP.md](C:\Users\31072\openclaw-trade-employee\ROADMAP.md) as the best-fit release-facing project document for the repo's current MVP stage.
+- Updated [README.md](C:\Users\31072\openclaw-trade-employee\README.md) to surface the roadmap and implementation checklist.
+- Added [LICENSE](C:\Users\31072\openclaw-trade-employee\LICENSE) using the MIT license after explicit user confirmation.
+- Verified the repo now has both a public license file and a roadmap-style release-facing document appropriate for the current MVP maturity.

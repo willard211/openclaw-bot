@@ -13,6 +13,12 @@ An MVP skeleton for a foreign-trade AI assistant that combines product facts, co
 - `docs/`: implementation notes and rollout checklist
 - `tasks/`: local working rules, lessons, and task tracking
 
+## Project Docs
+
+- [ROADMAP.md](C:\Users\31072\openclaw-trade-employee\ROADMAP.md): near-term milestones from MVP to production readiness
+- [docs/implementation-checklist.md](C:\Users\31072\openclaw-trade-employee\docs\implementation-checklist.md): short rollout checklist and validation targets
+- [LICENSE](C:\Users\31072\openclaw-trade-employee\LICENSE): MIT license for repository use and distribution
+
 ## Current MVP Scope
 
 - Detects the likely skill path from a customer message
